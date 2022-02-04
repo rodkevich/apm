@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 var wg = sync.WaitGroup{}
@@ -21,6 +22,6 @@ func main() {
 	wg.Add(2)
 	go one("string for one")
 	go two("string for two")
-	//time.Sleep(3 *time.Second)
+	time.Sleep(3 * time.Second)
 	wg.Wait()
 }
